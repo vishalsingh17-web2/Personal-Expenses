@@ -11,4 +11,9 @@ class Transaction {
     required this.amount,
     required this.date,
   });
+  Transaction.fromDb(Map<String, dynamic> parsedJson)
+  : id = parsedJson['id'],
+  title = parsedJson['title'],
+  amount = parsedJson['amount'] as double,
+  date = parsedJson['date'] as DateTime;
 }
